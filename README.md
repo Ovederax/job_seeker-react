@@ -1,12 +1,11 @@
 This project was bootstrapped with [Create React Kotlin App](https://github.com/JetBrains/create-react-kotlin-app).
 
-##Setup project from git
-npm install -g create-react-kotlin-app<br>
-npx create-react-kotlin-app job_seeker-react<br>
-cd job_seeker-react/<br>
-npm i @jetbrains/kotlin-react-router-dom<br>
-npm run gen-idea-libs<br>
-//copy files from git
+### Setup project from git
+
+git clone https://github.com/Ovederax/job_seeker-react.git<br>
+cd job_seeker-react<br>
+npm install<br>
+use Intelij Idea Ultimate<br>
 
 ## Available Scripts
 ### `npm start` or `yarn start`
