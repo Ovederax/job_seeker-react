@@ -1,16 +1,35 @@
-body {
+* {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
 }
 
-/*---Fonts---*/
-
-/*---Basic---*/
-#root {
-}
+html,
 body {
-  font-family: 'Roboto';
+  height: 100%;
+}
+
+.footer {
+  flex: 0 0 auto;
+}
+
+#content {
+  flex: 1 0 auto;
+  padding-bottom: 30px;
+}
+
+.content {
+  flex: 1 0 auto;
+  padding-bottom: 30px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', 'sans-serif';
   font-size: 18px;
   margin: 0;
 }
@@ -31,6 +50,11 @@ h1, h2, h3, h4, h5, h6 {
   color: #EB0D77;
   text-decoration: none;
   margin-right: 22px;
+}
+
+.basic_link:hover {
+  color: #0D9BEB;
+  text-decoration: underline;
 }
 
 /*---Header---*/
@@ -76,7 +100,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav__link {
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'sans-serif';
   font-size: 22px;
   color: #EB0D77;
   text-decoration: none;
@@ -108,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
 .intro__header {
   display: flex;
   justify-content: space-around;
-  margin: 0px 0 55px;
+  margin: 0 0 55px;
 }
 
 .intro__title {
@@ -183,8 +207,6 @@ h1, h2, h3, h4, h5, h6 {
 /*---Footer---*/
 .footer {
   width: 100%;
-  position: absolute;
-  bottom: 0px;
   background-color: #000;
   display: flex;
 }
@@ -246,7 +268,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .header__logo {
-    padding: 10px 0px 10px 60px;
+    padding: 10px 0 10px 60px;
   }
 
   .logo__img {
@@ -283,7 +305,6 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   width: 100%;
   height: 28px;
-  display: block;
   margin: 5px 0;
   font-size: 20px;
   background-color: #2C4052;
@@ -353,12 +374,12 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   background: rgba(0,0,0,0.6);
   z-index: 99999;
-  opacity:0;
+  /*opacity:0;*/
 
   -webkit-transition: opacity 100ms ease-in;
   -moz-transition: opacity 100ms ease-in;
   transition: opacity 100ms ease-in;
-  pointer-events: none;
+  /*pointer-events: none;*/
 }
 
 .modalDialog:target {
@@ -377,8 +398,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .close {
   font-size: 26px;
-  font-family: 'Roboto';
-  font-weight: 300;
+  font-family: 'Roboto', 'sans-serif';
   position: absolute;
   background-color: #2C4052;
   border: 4px solid #0D9BEB;
@@ -407,3 +427,24 @@ input:active, input:focus {
   outline: none;
 }
 
+
+
+
+/*Special huck*/
+/* Сегодня мне стыдно, завтра забуду надеюсь */
+.col_red {
+  color: red;
+}
+
+.width_10percent {
+  width: 10%;
+}
+
+
+.width_14percent {
+  width: 14%;
+}
+
+.fwbold {
+  font-weight: bold;
+}

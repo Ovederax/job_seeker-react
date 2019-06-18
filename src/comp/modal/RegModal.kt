@@ -1,31 +1,60 @@
 package comp.modal
 
-//<div id="test2" class="modalDialog">
-//   <div class="popwin_reg">
-//      <div class="popwin__inner">
-//        <button class="close">X</button>
-//         <div class="intput_block">
-//            <div>
-//               <div class="input_title">Логин:</div>
-//               <input class="popwin_input" type="text">
-//            </div>
-//            <div>
-//               <div class="input_title">Email:</div>
-//               <input class="popwin_input" type="text">
-//            </div>
-//            <div>
-//               <div class="input_title">Пароль:</div>
-//               <input class="popwin_input" type="password">
-//            </div>
-//         </div>
-//
-//         <div class="popwin_bottom">
-//            <button class="popwin_btn">Создать аккаунт</button>
-//         </div>
-//      </div>
-//   </div>
-//</div>
+import kotlinx.html.js.onClickFunction
+import react.RBuilder
+import react.RComponent
+import react.RProps
+import react.RState
+import react.dom.button
+import react.dom.div
+import react.dom.input
 
-class RegModal {
+interface RegModalProps : RProps {
+    var exit: () -> Unit
+}
 
+interface RegModalState : RState {
+
+}
+
+class RegModal(props: RegModalProps) : RComponent<RegModalProps, RegModalState>(props)  {
+    override fun RBuilder.render() {
+        div(classes = "modalDialog") {
+            attrs["id"] = "register"
+            div(classes = "popwin_reg") {
+                div(classes = "popwin__inner") {
+                    button(classes = "close") {
+                        +"X"
+                        attrs.onClickFunction = {props.exit()}
+                    }
+                    div(classes="intput_block") {
+                        div {
+                            div(classes = "input_title") {
+                                +"Логин:"
+                            }
+                            input( classes = "popwin_input" ) {  }
+                        }
+                        div() {
+                            div(classes = "input_title") { +"Email:" }
+                            input( classes = "popwin_input" ) {  }
+                        }
+                        div {
+                            div(classes = "input_title") { +"Пароль:" }
+                            input( classes = "popwin_input" ) {  }
+                        }
+                    }
+                    div(classes = "popwin_bottom") {
+                        button(classes = "popwin_btn") {
+                            +"Создать аккаунт"
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+fun RBuilder.regModal(function: () -> Unit) = child(RegModal::class) {
+    attrs.exit = function;
 }

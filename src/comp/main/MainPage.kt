@@ -18,24 +18,6 @@ interface MainPageState : RState {
 
 class MainPage(props: MainPageProps) : RComponent<MainPageProps, MainPageState>(props) {
     override fun RBuilder.render() {
-        header ("header"){
-            div("header__inner") {
-               div("header__logo") {
-                   img(classes = "logo__img", src = "content/icons/logo.png") {}
-                   div(classes = "logo__text") { +"JOB SEEKER"}
-               }
-
-               nav("nav") {
-                  a("#", classes = "nav__link") { +"Поиск работы" }
-                  a("#", classes = "nav__link") { +"Новая вакансия" }
-                  a("#", classes = "nav__link") { +"Компании" }
-                  a("#", classes = "nav__link") {
-                     img (src = "content/icons/exit.png") {  }
-                  }
-               }
-            }
-        }
-
         div("intro") {
             div("container") {
                 div("intro__header") {
@@ -81,26 +63,6 @@ class MainPage(props: MainPageProps) : RComponent<MainPageProps, MainPageState>(
                         }
                     }
                 }
-            }
-        }
-        footer(classes = "footer") {
-            div(classes = "footer__inner") {
-                div(classes = "footer__copyright") {
-                    +"© 2019 “JOB SEEKER”"
-                }
-
-                div(classes = "social") {
-                    div(classes = "social__item") {
-                        img(src="content/social/facebook.png", classes = "social__icon") {  }
-                        a(classes = "basic_link social_link", href = "https://www.facebook.com", target = "_blank") {+"Facebook"}
-                    }
-
-                    div(classes = "social__item") {
-                        img(src="content/social/twitter.png", classes = "social__icon") {  }
-                        a(classes = "basic_link social_link", href = "https://twitter.com/?lang=ru", target = "_blank") {+"Twitter"}
-                    }
-                }
-
             }
         }
     }

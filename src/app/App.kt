@@ -1,37 +1,45 @@
 package app
 
-import comp.account.candidate.cv.CandidateEditCV
-import comp.account.UserAccountMain
-import comp.main.MainPage
+import comp.account.userAccount
+import comp.account.candidate.cv.*
+import comp.main.container
+import comp.main.mainPage
 import react.*
 import react.router.dom.*
 
 
 class App : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
-        browserRouter {  // or "hashRouter"
+        hashRouter {   // or "hashRouter"
             switch {
                 // Лендинг с приглашением к регистрации
-                route("/", MainPage::class, exact = true)
-                route("/account", UserAccountMain::class, exact = true)
-                route("/account/education", CandidateEditCV::class, exact = true)
-                route("/account/personal",  CandidateEditCV::class, exact = true)
-                route("/account/work_exp",  CandidateEditCV::class, exact = true)
-                route("/account/will_work", CandidateEditCV::class, exact = true)
-                route("/account/other",     CandidateEditCV::class, exact = true)
-//                route("/account", strict = true) {
-//                    div {
-//
-//                    }
-//                }
-//                +"HI login"
-//                a(href = "/") {
-//                    +"Back"
-//                }
+                route("/",  exact = true) {
+                    container(::mainPage)
+                }
+                route("/account", exact = true) {
+                    container(::userAccount)
+                }
+                route("/account/education", exact = true) {
+                    container(::candidateEditEdu)
+                }
+                route("/account/personal", exact = true) {
+                    container(::candidateEditPersonal)
+                }
+                route("/account/work_exp", exact = true) {
+                    container(::candidateEditWorkExp)
+                }
+                route("/account/will_work", exact = true) {
+                    container(::candidateEditWillWork)
+                }
+                route("/account/other", exact = true) {
+                    container(::candidateEditOther)
+                }
                 redirect(from = "/redirect", to = "/redirected")
             }
         }
     }
 }
 
-fun RBuilder.app() = child(App::class) {}
+fun RBuilder.app() :ReactElement {
+    return child(App::class) {}
+}

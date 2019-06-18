@@ -1,0 +1,250 @@
+.path {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #000;
+    margin: 22px 0;
+}
+
+.cvedit__title {
+    width: 100%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    margin: 32px 0 44px;
+}
+
+.cvedit__text {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.edit_my_cv_btn {
+    color: #fff;
+    background-color: #6F9EBD;
+    width: 300px;
+    height: 55px;
+    font-size: 16px;
+}
+
+.cv_nav {
+    padding: 10px 60px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cvedit_btn {
+    color: #fff;
+    font-size: 16px;
+    background-color: #89b2cc;
+    width: 160px;
+    height: 40px;
+}
+
+.marklist {
+
+}
+
+.marklist__item {
+    margin-left: 50px;
+}
+
+.cv_menu {
+    width: 100%;
+    display: flex;
+    font-family: 'Roboto';
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.cv_menu__item {
+    position: relative;
+    text-align: center;
+    width: 24%;
+    height: 50px;
+    background-color: #91B2C8;
+    border: 1px solid #fff;
+}
+
+.cv_menu__item--active {
+    background-color: #A3C4E299;
+}
+
+.cv_menu__item div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+.cv_menu__item--selected {
+
+}
+
+.cv_edit_area {
+    padding: 20px 0 20px;
+    background-color: #A3C4E299;
+}
+
+.cv_edit_area_inner {
+    margin: 0 30px;
+}
+
+.cv_menu__item {
+    cursor: pointer;
+}
+
+.cvedit_personal {
+
+}
+
+.cvedit_personal__sup {
+    color: red;
+    font-size: 16px;
+    padding: 10px 0;
+    margin: 0 60px;
+}
+
+.cvedit_personal__title {
+    font-size: 22px;
+    margin-left: 30px;
+
+}
+
+.table_group {
+    margin: 15px;
+    padding: 10px 10px;
+    background-color: #ffffff99;
+}
+
+.cv__table {
+    width: 800px;
+}
+
+.cv__table td {
+    font-size: 18px;
+    padding: 5px;
+
+}
+
+.cv__table td input,
+.cv__table td select {
+    font-size: 16px;
+}
+
+.cv_personal__table {
+    width: 800px;
+    margin-left: 8px;
+}
+
+.cv_personal__table td {
+    padding: 5px;
+    border: 1px solid #000;
+}
+
+.cv_edit_area__btn {
+    min-width: 260px;
+    height: 36px;
+    background-color: #ffffff77;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.flex_row_container {
+    padding: 8px 7px 0;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cvedit-background {
+    background: linear-gradient(to bottom, #f1f8ff, #dae2ea);
+}
+
+.other__edit_photo {
+    padding: 0 14px;
+    position: relative;
+    width: 120px;;
+}
+
+.other__edit_photo img {
+    display: block;
+}
+
+.other__edit_photo div {
+    position: absolute;
+    bottom: 5px;
+    left: 22px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.cvedit_other__photo {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.other__edit_photo_desc {
+    padding: 30px
+}
+
+.cv_other_social__item  {
+    position: relative;
+    padding: 20px 0px 20px 70px;
+}
+
+.cv_other_social__item img {
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.cv_other_social__item input {
+    height: 16px;
+    border-radius: 3px;
+    width: 300px;
+}
+
+/*Костыли*/
+.add_work_exp {
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.wh16px {
+    width: 16px;
+    height: 16px;
+}
+
+.w20percent {
+    width: 20%;
+}
+
+.w30percent {
+    width: 30%;
+}
+
+.w40percent {
+    width: 30%;
+}
+
+.w50percent {
+    width: 30%;
+}
+
+.w70percent {
+    width: 70%;
+}
+
+.margin_right_5px {
+    margin-right: 5px;
+}
+
+.margin_top_bottom_10px {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
