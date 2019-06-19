@@ -20,6 +20,10 @@ interface UserAccountMainState : RState {
 
 }
 
+fun gotoPageAccount() {
+    window.location.href = "#/account"
+}
+
 class UserAccountMain(props: UserAccountMainProps) : RComponent<UserAccountMainProps, UserAccountMainState>(props) {
     override fun RBuilder.render() {
         div(classes = "intro") {

@@ -1,5 +1,7 @@
 package comp.account.candidate.cv
 
+import comp.account.gotoPageAccount
+import kotlinx.html.js.onClickFunction
 import kotlinx.html.style
 import react.RBuilder
 import react.RComponent
@@ -66,13 +68,23 @@ class CandidateEditOther(props: CandidateEditOtherProps) : RComponent<CandidateE
                   }
 
                }
+               div(classes = "cv_nav") {
+                  div {  }
+                  button(classes = "cvedit_btn") {
+                     +"Сохранить"
+                     attrs.onClickFunction = {
+                        saveDate()
+                        gotoPageAccount()
+                     }
+                  }
+               }
             }
-           div(classes = "cv_nav") {
-              div {  }
-              button(classes = "cvedit_btn") { +"Сохранить" }
-           }
         }
     }
+
+   private fun saveDate() {
+
+   }
 }
 
 fun RBuilder.candidateEditOther() = child(CandidateEditOther::class) {

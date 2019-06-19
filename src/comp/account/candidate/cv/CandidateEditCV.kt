@@ -37,9 +37,15 @@ interface CandidateEditCVState : RState {
 //   </div>
 //</header>
 
+var header = arrayOf("Персональные данные",	"Образование", "Опыт работы", "Желаемая должность", "Дополнительно")
+var paths = arrayOf("/account/personal", "/account/education", "/account/work_exp", "/account/will_work", "/account/other")
+
+fun gotoPageCandidateEdit(id: Int) {
+	window.location.href = "#"+paths[id]
+}
+
 class CandidateEditCV(props: CandidateEditCVProps) : RComponent<CandidateEditCVProps, CandidateEditCVState>(props) {
-	var header = arrayOf("Персональные данные",	"Образование", "Опыт работы", "Желаемая должность", "Дополнительно")
-	var paths = arrayOf("/account/personal", "/account/education", "/account/work_exp", "/account/will_work", "/account/other")
+
 
 	override fun RBuilder.render() {
         div (classes = "path") {
@@ -66,7 +72,6 @@ class CandidateEditCV(props: CandidateEditCVProps) : RComponent<CandidateEditCVP
 				}
 			}
 		}
-
     }
 }
 

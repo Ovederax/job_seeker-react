@@ -46,6 +46,9 @@ class RegModal(props: RegModalProps) : RComponent<RegModalProps, RegModalState>(
                     div(classes = "popwin_bottom") {
                         button(classes = "popwin_btn") {
                             +"Создать аккаунт"
+                            attrs.onClickFunction = {
+
+                            }
                         }
                     }
                 }

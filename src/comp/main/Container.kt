@@ -2,6 +2,7 @@ package comp.main
 
 import comp.modal.authModal
 import comp.modal.regModal
+import kotlinext.js.js
 import kotlinx.html.js.onClickFunction
 import react.*
 import react.dom.*
@@ -19,29 +20,29 @@ interface ContainerState : RState {
 
 class Container(props: ContainerProps) : RComponent<ContainerProps, ContainerState>(props) {
     override fun componentDidMount() {
-        state.authVisible = false
-        state.regVisible = false
+        setAuthVisible(false)
+        setRegVisible(false)
     }
+    // Больше жертв костыльному богу
     fun setAuthVisible(visible: Boolean) {
-        setState {
-            authVisible = visible
+        if(visible) {
+            js("login.style = ''")
+        } else {
+            js("login.style = 'display:none'")
         }
     }
     fun setRegVisible(visible: Boolean) {
-        //var loc = window.location.href;
-        setState {
-            regVisible = visible
-            //window.location.href = loc;
+        if(visible) {
+            js("register.style = ''")
+        } else {
+            js("register.style = 'display:none'")
         }
     }
     override fun RBuilder.render() {
         div(classes = "content") {
-            if(state.regVisible) {
-                regModal {setRegVisible(false)}
-            }
-            if(state.authVisible) {
-                authModal({setAuthVisible(false)})
-            }
+            regModal {setRegVisible(false)}
+            authModal{setAuthVisible(false)}
+
             header ("header"){
                 div("header__inner") {
                     div("header__logo") {

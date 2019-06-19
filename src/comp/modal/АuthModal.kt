@@ -41,9 +41,9 @@ class AuthModal(props: AuthModalProps) : RComponent<AuthModalProps, AuthModalSta
                     div(classes = "popwin_bottom") {
                         button(classes = "popwin_btn") {
                             +"Вход"
-                        }
-                        button(classes = "popwin_btn") {
-                            +"Регистрация"
+                            attrs.onClickFunction = {
+
+                            }
                         }
                     }
                 }

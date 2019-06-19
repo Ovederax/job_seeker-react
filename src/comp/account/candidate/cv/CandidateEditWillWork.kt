@@ -1,6 +1,8 @@
 package comp.account.candidate.cv
 
+import comp.account.gotoPageAccount
 import kotlinx.html.InputType
+import kotlinx.html.js.onClickFunction
 import kotlinx.html.style
 import react.RBuilder
 import react.RComponent
@@ -18,10 +20,12 @@ interface CandidateEditWillWorkState : RState {
 }
 
 class CandidateEditWillWork(props: CandidateEditWillWorkProps) : RComponent<CandidateEditWillWorkProps, CandidateEditWillWorkState>(props) {
-    override fun RBuilder.render() {
+   private val pageId = 3
+
+   override fun RBuilder.render() {
        div (classes = "intro") {
           div(classes = "container") {
-             candidateEditCV(3, "Желаймая должность")
+             candidateEditCV(pageId, "Желаймая должность")
 
              div(classes = "cv_edit_area") {
                 div(classes = "cv_edit_area_inner") {
@@ -132,12 +136,28 @@ class CandidateEditWillWork(props: CandidateEditWillWorkProps) : RComponent<Cand
              }
 
             div(classes = "cv_nav") {
-               button (classes = "cvedit_btn") { +"Назад" }
-               button (classes = "cvedit_btn") { +"Далее" }
+               button (classes = "cvedit_btn") {
+                  attrs.onClickFunction = {
+                     saveDate()
+                     gotoPageCandidateEdit(pageId-1)
+                  }
+                  +"Назад"
+               }
+               button (classes = "cvedit_btn") {
+                  attrs.onClickFunction = {
+                     saveDate()
+                     gotoPageCandidateEdit(pageId+1)
+                  }
+                  +"Далее"
+               }
             }
           }
        }
     }
+
+   private fun saveDate() {
+
+   }
 }
 
 fun RBuilder.candidateEditWillWork() = child(CandidateEditWillWork::class) {

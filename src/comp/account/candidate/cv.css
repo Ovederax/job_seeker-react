@@ -229,11 +229,15 @@
 }
 
 .w40percent {
-    width: 30%;
+    width: 40%;
+}
+
+.w45percent {
+    width: 45%;
 }
 
 .w50percent {
-    width: 30%;
+    width: 50%;
 }
 
 .w70percent {

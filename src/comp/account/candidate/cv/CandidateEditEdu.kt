@@ -1,11 +1,13 @@
 package comp.account.candidate.cv
 
+import kotlinx.html.js.onClickFunction
 import kotlinx.html.style
 import react.RBuilder
 import react.RComponent
 import react.RProps
 import react.RState
 import react.dom.*
+import kotlin.browser.window
 
 interface CandidateEditEduProps : RProps {
 
@@ -16,10 +18,11 @@ interface CandidateEditEduState : RState {
 }
 
 class CandidateEditEdu(props: CandidateEditEduProps) : RComponent<CandidateEditEduProps, CandidateEditEduState>(props) {
-    override fun RBuilder.render() {
+   val pageId = 1;
+   override fun RBuilder.render() {
         div (classes = "intro"){
             div(classes = "container") {
-               candidateEditCV(1, "Образование")
+               candidateEditCV(pageId, "Образование")
                div(classes = "cv_edit_area") {
                   div(classes = "cv_edit_area_inner") {
                      table(classes = "cv__table") {
@@ -96,12 +99,28 @@ class CandidateEditEdu(props: CandidateEditEduProps) : RComponent<CandidateEditE
                   }
                }
                div(classes = "cv_nav") {
-                  button (classes = "cvedit_btn") { +"Назад" }
-                  button (classes = "cvedit_btn") { +"Далее" }
+                  button (classes = "cvedit_btn") {
+                     +"Назад"
+                     attrs.onClickFunction = {
+                        saveDate()
+                        gotoPageCandidateEdit(pageId-1)
+                     }
+                  }
+                  button (classes = "cvedit_btn") {
+                     +"Далее"
+                     attrs.onClickFunction = {
+                        saveDate()
+                        gotoPageCandidateEdit(pageId+1)
+                     }
+                  }
                }
             }
         }
     }
+
+   private fun saveDate() {
+
+   }
 }
 
 fun RBuilder.candidateEditEdu() = child(CandidateEditEdu::class) {

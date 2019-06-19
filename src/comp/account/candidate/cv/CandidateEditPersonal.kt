@@ -1,5 +1,6 @@
 package comp.account.candidate.cv
 
+import kotlinx.html.js.onClickFunction
 import kotlinx.html.style
 import react.RBuilder
 import react.RComponent
@@ -17,10 +18,12 @@ interface CandidateEditPersonalState : RState {
 
 
 class CandidateEditPersonal(props: CandidateEditPersonalProps) : RComponent<CandidateEditPersonalProps, CandidateEditPersonalState>(props) {
+    private val pageId = 0;
+
     override fun RBuilder.render() {
        div (classes = "intro") {
           div(classes = "container") {
-             candidateEditCV(0, "Персональные данные")
+             candidateEditCV(pageId, "Персональные данные")
 
              div(classes = "cv_edit_area cvedit_personal") {
                 div(classes = "cvedit_personal__sup") { +"Персональные данные, поступившие с портала государственных услуг" }
@@ -29,10 +32,10 @@ class CandidateEditPersonal(props: CandidateEditPersonalProps) : RComponent<Cand
                    div(classes = "cvedit_personal__title") { +"Основная информация" }
                    table(classes = "cv_personal__table") {
                       tr() {
-                         td {
-                            /*attrs.style {
-                               +"width:45%"
-                            }*/
+                         td(classes = "w45percent") {
+//                            attrs.style = js {
+//                               width = "45%
+//                            }
                             +"ФИО"
                          }
                          td {  }
@@ -52,7 +55,7 @@ class CandidateEditPersonal(props: CandidateEditPersonalProps) : RComponent<Cand
                    div(classes = "cvedit_personal__title") { +"Идентификаторы" }
                    table(classes = "cv_personal__table") {
                       tr() {
-                         td { /*attrs.style { +"width:45%" }*/
+                         td (classes = "w45percent") { /*attrs.style { +"width:45%" }*/
                            +"СНИЛС"
                          }
                          td {  }
@@ -68,7 +71,7 @@ class CandidateEditPersonal(props: CandidateEditPersonalProps) : RComponent<Cand
                    div(classes = "cvedit_personal__title") { +"Контактная информация" }
                    table(classes = "cv_personal__table") {
                       tr() {
-                         td { /*attrs.style { +"width:45%" }*/
+                         td (classes = "w45percent") { /*attrs.style { +"width:45%" }*/
                             +"Адрес регистрации"
                          }
                          td {  }
@@ -96,7 +99,12 @@ class CandidateEditPersonal(props: CandidateEditPersonalProps) : RComponent<Cand
 
              div(classes = "cv_nav") {
                 div {  }
-                button(classes = "cvedit_btn") { +"Далее" }
+                button(classes = "cvedit_btn") {
+                    +"Далее"
+                    attrs.onClickFunction = {
+                        gotoPageCandidateEdit(pageId+1)
+                    }
+                }
              }
           }
        }
