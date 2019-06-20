@@ -23,6 +23,7 @@ interface CandidateEditOtherState : RState {
 
 
 class CandidateEditOther(props: CandidateEditOtherProps) : RComponent<CandidateEditOtherProps, CandidateEditOtherState>(props) {
+   var refs:dynamic = null
    var socials = arrayOf(
            "content/social/odnoklassniki.png",
            "content/social/vk.png",
@@ -30,6 +31,14 @@ class CandidateEditOther(props: CandidateEditOtherProps) : RComponent<CandidateE
            "content/social/twitter2.png",
            "content/social/facebook2.png"
    )
+
+   enum class FieldNames(val field: String) {
+
+   }
+
+   override fun componentWillMount() {
+
+   }
    override fun RBuilder.render() {
         div (classes = "intro") {
             div(classes = "container") {
@@ -73,8 +82,9 @@ class CandidateEditOther(props: CandidateEditOtherProps) : RComponent<CandidateE
                   button(classes = "cvedit_btn") {
                      +"Сохранить"
                      attrs.onClickFunction = {
-                        saveDate()
-                        gotoPageAccount()
+                        saveDate() {
+                           gotoPageAccount()
+                        }
                      }
                   }
                }
@@ -82,7 +92,7 @@ class CandidateEditOther(props: CandidateEditOtherProps) : RComponent<CandidateE
         }
     }
 
-   private fun saveDate() {
+   private fun saveDate(func: ()->Unit) {
 
    }
 }

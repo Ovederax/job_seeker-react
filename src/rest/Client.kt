@@ -41,5 +41,14 @@ class Client {
         }
         xhttp.send();
     }
+
+    fun put(url:String, content:String, call: (String) -> Unit = {}){
+        xhttp.open("PUT", url, true);
+        xhttp.setRequestHeader("Content-Type", "application/hal+json")
+        xhttp.onload = {
+            call(xhttp.responseText)
+        }
+        xhttp.send(content);
+    }
 }
 

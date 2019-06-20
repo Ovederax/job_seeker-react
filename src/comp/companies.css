@@ -1,0 +1,74 @@
+/*------Companies-------*/
+.companies {
+    margin-top: 40px;
+}
+
+.companies__header {
+    font-size: 20px;
+}
+
+.companies__header__top {
+    margin-bottom: 10px;
+}
+
+.companies__header__title {
+    font-size: 30px;
+    margin-right: 80px;
+}
+
+.companies__header__found {
+    font-size: 15px;
+}
+
+.companies__header__average {
+    margin-bottom: 10px;
+}
+
+.companies__header__sort {
+    font-size: 20px;
+}
+
+.companies__header__sort select {
+    font-size: 16px;
+    padding: 4px;
+    margin-right: 10px;
+    min-width: 200px;
+}
+
+
+.companies__content {
+
+}
+
+.companies__item {
+    min-height: 280px;
+    max-width: 960px;
+    background-color: #91B2C8;
+    margin: 20px 0;
+    padding: 30px 60px;
+}
+
+.companies__item__inner {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+}
+
+.companies__item__prof {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.companies__item__company_name {
+    font-size: 16px;
+}
+
+.companies__item__price {
+    font-size: 20px;
+}
+
+.companies__item__content {
+
+}

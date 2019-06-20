@@ -18,7 +18,12 @@ interface CandidateEditPersonalState : RState {
 
 
 class CandidateEditPersonal(props: CandidateEditPersonalProps) : RComponent<CandidateEditPersonalProps, CandidateEditPersonalState>(props) {
-    private val pageId = 0;
+    var refs:dynamic = null
+    private val pageId = 0
+
+    enum class FieldNames(val field: String) {
+
+    }
 
     override fun RBuilder.render() {
        div (classes = "intro") {

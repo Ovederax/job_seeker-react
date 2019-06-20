@@ -20,7 +20,12 @@ interface CandidateEditWillWorkState : RState {
 }
 
 class CandidateEditWillWork(props: CandidateEditWillWorkProps) : RComponent<CandidateEditWillWorkProps, CandidateEditWillWorkState>(props) {
+   var refs:dynamic = null
    private val pageId = 3
+
+   enum class FieldNames(val field: String) {
+
+   }
 
    override fun RBuilder.render() {
        div (classes = "intro") {
